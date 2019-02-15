@@ -6,23 +6,25 @@ export default function Timeline () {
 
     const Container = styled.div`
         display: flex;
-        height: 600px;
+        flex-wrap: wrap;
         width: 94%;
         position: relative;
         margin: 0 3%;
         // justify-content: center;
+        border-left: 1px dashed rgba(0,0,0,.1);
     `;
 
     const Column = styled.div`
-        height: 100%;
-        width: 75px;
-        border-right: 1px dashed rgba(0,0,0,.1);
-        position: relative;
+        // height: 100%;
+        width: 100%;
+        // border-right: 1px dashed rgba(0,0,0,.1);
+        // position: relative;
     `;
 
     const LineMiddle = styled.div`
         width: 100%;
         top: 50%;
+        display: none;
         position: absolute;
         border-bottom: 1px solid black;
 
@@ -30,26 +32,26 @@ export default function Timeline () {
 
     const Year = styled.span`
         font-size: 24px;
-        position: absolute;
-        top: 50%;
-        margin: 0;
-        font-size
+        color: rgb(223, 229, 231);
+        font-weight: bold;
+        // position: absolute;
+        // top: 50%;
+        display: block;
+        margin: 20px 0 0 10px;
     `;
 
     const Card = styled.div`
         pointer-events: none;
-        width: 220px;
+        // width: 220px;
         background-color:white;
-        position:absolute;
         z-index: 2;
         padding: 10px;
-        ${propsS => propsS.bottom  ? 'bottom:' + propsS.bottom + '%;' : ''}
-        ${propsS => propsS.top ? 'top:' + propsS.top + '%;' : ''}
-
+        margin-bottom: 10px;
+        
         h5 {
             margin: 0 0 10px 0;
         }
-
+        
         p {
             margin: 0;
         }
@@ -58,6 +60,7 @@ export default function Timeline () {
     const VerticalLine = styled.div`
 
         // background: rgba(0,0,.1);
+        display: none;
         margin: 0;
         position:relative;
         top: 50%;
@@ -100,11 +103,11 @@ export default function Timeline () {
             let translateY = pos.bottom ? true: false;
             return (
             <Column key={d.id}>
+                <Year> {year} </Year>
                 <Card top={pos.top} bottom={pos.bottom} className='z-depth-1'>
                     <h5>{d.title}</h5>
                     <p>{d.text}</p>
                 </Card>
-                <Year> {year} </Year>
 
                 <VerticalLine height={height} translateY={translateY} />
             </Column>

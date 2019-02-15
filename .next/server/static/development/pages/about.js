@@ -871,31 +871,27 @@ function Timeline() {
   var Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Timeline__Container",
     componentId: "sc-1s2wrk4-0"
-  })(["display:flex;height:600px;width:94%;position:relative;margin:0 3%;"]);
+  })(["display:flex;flex-wrap:wrap;width:94%;position:relative;margin:0 3%;border-left:1px dashed rgba(0,0,0,.1);"]);
   var Column = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Timeline__Column",
     componentId: "sc-1s2wrk4-1"
-  })(["height:100%;width:75px;border-right:1px dashed rgba(0,0,0,.1);position:relative;"]);
+  })(["width:100%;"]);
   var LineMiddle = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Timeline__LineMiddle",
     componentId: "sc-1s2wrk4-2"
-  })(["width:100%;top:50%;position:absolute;border-bottom:1px solid black;"]);
+  })(["width:100%;top:50%;display:none;position:absolute;border-bottom:1px solid black;"]);
   var Year = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
     displayName: "Timeline__Year",
     componentId: "sc-1s2wrk4-3"
-  })(["font-size:24px;position:absolute;top:50%;margin:0;font-size"]);
+  })(["font-size:24px;color:rgb(223,229,231);font-weight:bold;display:block;margin:20px 0 0 10px;"]);
   var Card = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Timeline__Card",
     componentId: "sc-1s2wrk4-4"
-  })(["pointer-events:none;width:220px;background-color:white;position:absolute;z-index:2;padding:10px;", " ", " h5{margin:0 0 10px 0;}p{margin:0;}"], function (propsS) {
-    return propsS.bottom ? 'bottom:' + propsS.bottom + '%;' : '';
-  }, function (propsS) {
-    return propsS.top ? 'top:' + propsS.top + '%;' : '';
-  });
+  })(["pointer-events:none;background-color:white;z-index:2;padding:10px;margin-bottom:10px;h5{margin:0 0 10px 0;}p{margin:0;}"]);
   var VerticalLine = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Timeline__VerticalLine",
     componentId: "sc-1s2wrk4-5"
-  })(["margin:0;position:relative;top:50%;left:-1px;width:1px;background-image:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.0));height:", "%;", ":hover &{background-image:linear-gradient(to bottom,rgb(1,58,81),26%,rgb(251,140,0));}", ""], function (propsS) {
+  })(["display:none;margin:0;position:relative;top:50%;left:-1px;width:1px;background-image:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.0));height:", "%;", ":hover &{background-image:linear-gradient(to bottom,rgb(1,58,81),26%,rgb(251,140,0));}", ""], function (propsS) {
     return propsS.height || 0;
   }, Column, function (propsS) {
     return propsS.translateY ? "\n        background-image: linear-gradient(to top, rgba(0,0,0,.4), rgba(0, 0,0, .0));\n            transform: translateY(-100%);\n\n            ".concat(Column, ":hover & {\n                background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(251, 140, 0));\n            }\n        ") : '';
@@ -922,42 +918,42 @@ function Timeline() {
         key: d.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 105
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
         top: pos.top,
         bottom: pos.bottom,
         className: "z-depth-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 108
         },
         __self: this
       }, d.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 109
         },
         __self: this
-      }, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        },
-        __self: this
-      }, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
+      }, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
         height: height,
         translateY: translateY,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 112
         },
         __self: this
       }));
@@ -967,13 +963,13 @@ function Timeline() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 119
     },
     __self: this
   }, getColumn(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LineMiddle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 121
     },
     __self: this
   }));
