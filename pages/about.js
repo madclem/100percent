@@ -4,12 +4,12 @@ import NavBar from 'components/NavBar';
 import Layout from 'components/Layout';
 import Author from 'components/Author';
 import Footer from 'components/Footer';
+import Timeline from 'components/Timeline/Timeline';
 import Intro from './home/Intro';
 import Speakers from './home/Speakers';
 import Parallax from './home/Parallax';
 import Experiment from './home/Experiment';
 import Keygoals from './home/Keygoals';
-import Timeline from './about/Timeline';
 import Quote from './home/Quote';
 import Divider from 'components/Divider';
 
@@ -33,26 +33,40 @@ export default function About () {
     `;
 
     const ContainerTimeline = styled.div`
+        max-width: 100%;
         background-color: #f6f6f6;
+    `;
+
+    const TitleMilestones = styled.p`
+        font-weight: bold;
+        font-size: 16px!important;
+        text-transform: uppercase;
+        margin: 30px 0;
+        text-decoration: underline;
     `;
     return (
         <Layout>
             <Experiment />
-            <ContainerTimeline>
-                <Timeline />
-            </ContainerTimeline>
             <div className='container'>
-                {/* <Title className='center-align'> What do we do </Title>
+                <Title className='center-align'> What do we do </Title>
                 <Paragraph className='center-align'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut felis vel arcu iaculis laoreet. Quisque molestie suscipit lacinia. Pellentesque venenatis efficitur fringilla. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at. Nam luctus leo felis, non lacinia augue suscipit non. Fusce lectus risus, laoreet non posuere at, ullamcorper ut purus. </Paragraph>
 
                 <Title className='center-align'> Why do we do it </Title>
                 <Paragraph className='last center-align'> Vestibulum ut felis vel arcu iaculis laoreet. Quisque molestie suscipit lacinia. Pellentesque venenatis efficitur fringilla. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at. Nam luctus leo felis, non lacinia augue suscipit non. Fusce lectus risus, laoreet non posuere at, ullamcorper ut purus. </Paragraph>
                 
                 <Divider />
+
+            </div>
+            <div className='container'>
+                <TitleMilestones> Milestones </TitleMilestones>
+            </div>
+            <ContainerTimeline>
+                <Timeline />
+            </ContainerTimeline>
+            <div className='container'>
                 <AuthorContainer>
                     <Author image="/static/img/deborah.png" title='Founder: Deborah Gilshan' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut felis vel arcu iaculis laoreet. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at.' /> 
-                </AuthorContainer> */}
-
+                </AuthorContainer>
             </div>
         </Layout>
     );

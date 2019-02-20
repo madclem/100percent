@@ -17,6 +17,6 @@ export default function Experiment () {
     `;
 
     return (
-        <Container className='valign-wrapper orange lighten-5'><Title className='grey-text'>TOP</Title></Container>
+        <Container className='valign-wrapper orange lighten-5'><Title className='grey-text'>IMAGE</Title></Container>
     );
 }

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -754,6 +754,390 @@ var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/compon
 
 /***/ }),
 
+/***/ "./components/Timeline/Card.js":
+/*!*************************************!*\
+  !*** ./components/Timeline/Card.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Card; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var utils_styles_media__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/styles/media */ "./utils/styles/media.js");
+/* harmony import */ var _Column__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Column */ "./components/Timeline/Column.js");
+var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/components/Timeline/Card.js";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n            top: ", "\n            background-color: rgb(235, 235, 235);\n\n            ", ":hover & {\n                background-color: rgb(251, 140, 0);\n            }\n        "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n            opacity: .7;\n            background-color:#f2f2f2;\n            width: 216px;\n            ", "\n            ", "\n            position:absolute;\n            margin: 0;\n            transition: all 100ms ease-in 0s;\n\n            ", ":hover & {\n                background-color:white;\n                opacity: 1;\n                z-index: 3;\n\n            }\n        "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+function Card(props) {
+  var widthPoint = 10;
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Card__Container",
+    componentId: "sc-103by7j-0"
+  })(["overlow:hidden;pointer-events:none;background-color:white;z-index:2;padding:10px;margin-bottom:10px;position:relative;", " h5{margin:0 0 10px 0;font-size:1.64rem!important;}p{margin:0;font-size:14.5px!important;}"], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject(), function (propsS) {
+    return propsS.bottom ? 'bottom:' + propsS.bottom + '%;' : '';
+  }, function (propsS) {
+    return propsS.top ? 'top:' + propsS.top + '%;' : '';
+  }, _Column__WEBPACK_IMPORTED_MODULE_3__["default"]));
+  var Point = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Card__Point",
+    componentId: "sc-103by7j-1"
+  })(["width:", "px;height:", "px;background-color:rgb(251,140,0);border:1px solid rgb(251,140,0);border-radius:100%;position:absolute;top:calc(100% - ", "px);left:-", "px;", ""], widthPoint, widthPoint, widthPoint / 2, widthPoint / 2, utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject2(), function (propsS) {
+    return propsS.bottom ? "calc(100% - ".concat(widthPoint / 2, "px);") : "-".concat(widthPoint / 2, "px;");
+  }, _Column__WEBPACK_IMPORTED_MODULE_3__["default"]));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, _extends({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Point, {
+    bottom: props.bottom,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/Timeline/Column.js":
+/*!***************************************!*\
+  !*** ./components/Timeline/Column.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var utils_styles_media__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! utils/styles/media */ "./utils/styles/media.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n        height: 100%;\n        width: 75px;\n\n        :first-child {\n            border-left: 1px dashed rgba(0,0,0,.1);\n        }\n\n        border-right: 1px dashed rgba(0,0,0,.1);\n        position: relative;\n        transition: background-color 100ms ease-in 0s;\n\n        :hover {\n            background-color: #e5e5e5;\n        }\n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Column",
+  componentId: "sc-1t8ch6c-0"
+})(["width:100%;", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_0__["default"].tablet(_templateObject())));
+
+/***/ }),
+
+/***/ "./components/Timeline/Timeline.js":
+/*!*****************************************!*\
+  !*** ./components/Timeline/Timeline.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Timeline; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var utils_styles_media__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/styles/media */ "./utils/styles/media.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./components/Timeline/data.js");
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Card */ "./components/Timeline/Card.js");
+/* harmony import */ var _Column__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Column */ "./components/Timeline/Column.js");
+var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/components/Timeline/Timeline.js";
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n            z-index: 3;\n            width: ", "px;\n            height: ", "px;\n            background-color: rgb(220,220,220);\n            transition: background-color 100ms ease-in 0s;\n            ", ":hover & { background-color: rgb(0, 0, 0); }\n            border-radius: 100%;\n            position: absolute;\n            top: calc(50% - ", "px);\n            left: -", "px;        \n        "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n            display: block;\n            margin: 0;\n            position:relative;\n            top: 50%;\n            left: -1px;\n            width: 1px;\n            background-image: linear-gradient(to bottom, rgb(220,220,220), rgb(220, 220,220));\n            height: ", "%;\n            transition: background-image 100ms ease-in 0s;\n\n            ", ":hover & {\n                background-image: linear-gradient(to bottom, rgb(1, 58, 81), 26%, rgb(251, 140, 0));\n                z-index: 3;\n            }\n\n            ", "\n        "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n            margin: 0 0 0 5px;\n            transform: translateY(-100%);\n            position: absolute;\n            top: 50%;\n            transition: color 100ms ease-in 0s;\n\n            ", ":hover & {\n                color: black;\n            }\n        "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n            display: block;\n            width: 100%;\n            top: 50%;\n            left: 0;\n            position: absolute;\n            border-bottom: 1px solid rgb(220,220,220);\n        "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n            height: 100vh;\n            flex-wrap: nowrap;\n            border: none;\n        "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+function Timeline() {
+  var widthPoint = 6;
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Timeline__Container",
+    componentId: "vtn6sg-0"
+  })(["display:flex;flex-wrap:wrap;width:94%;position:relative;margin:0 3%;border-left:1px dashed rgba(0,0,0,.1);", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject()));
+  var LineMiddle = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Timeline__LineMiddle",
+    componentId: "vtn6sg-1"
+  })(["display:none;", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject2()));
+  var Year = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
+    displayName: "Timeline__Year",
+    componentId: "vtn6sg-2"
+  })(["font-size:24px;color:rgb(223,229,231);font-weight:bold;display:block;margin:20px 0 0 10px;", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject3(), _Column__WEBPACK_IMPORTED_MODULE_5__["default"]));
+  var VerticalLine = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Timeline__VerticalLine",
+    componentId: "vtn6sg-3"
+  })(["display:none;", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject4(), function (propsS) {
+    return propsS.height || 0;
+  }, _Column__WEBPACK_IMPORTED_MODULE_5__["default"], function (propsS) {
+    return propsS.translateY ? "\n                background-image: linear-gradient(to top, rgb(220,220,220), rgb(220,220,220));\n                transform: translateY(-100%);\n\n                ".concat(_Column__WEBPACK_IMPORTED_MODULE_5__["default"], ":hover & {\n                    background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(251, 140, 0));\n                }\n            ") : '';
+  }));
+  var Point = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+    displayName: "Timeline__Point",
+    componentId: "vtn6sg-4"
+  })(["", ""], utils_styles_media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject5(), widthPoint, widthPoint, _Column__WEBPACK_IMPORTED_MODULE_5__["default"], widthPoint / 2, widthPoint / 2)); // background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(0, 229, 158));
+
+  function getColumn() {
+    var positions = [{
+      bottom: 80
+    }, {
+      bottom: 60
+    }, {
+      top: 80
+    }, {
+      top: 60
+    }];
+    var years = {};
+    return _data__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (d, index) {
+      var pos = positions[index % 4];
+      var year = years[d.year] ? '' : d.year;
+      years[d.year] = true;
+      var height = (pos.bottom || pos.top) - 50;
+      var translateY = pos.bottom ? true : false;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Column__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        key: d.id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      }, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        top: pos.top,
+        bottom: pos.bottom,
+        className: "z-depth-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "material-icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, d.icon), d.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
+        height: height,
+        translateY: translateY,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Point, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 133
+        },
+        __self: this
+      }));
+    });
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140
+    },
+    __self: this
+  }, getColumn(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LineMiddle, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/Timeline/data.js":
+/*!*************************************!*\
+  !*** ./components/Timeline/data.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  id: 0,
+  icon: 'adjust',
+  year: 2011,
+  title: '',
+  text: 'Founded by Deborah Gilshan in October 2011.'
+}, {
+  id: 1,
+  icon: 'event',
+  year: 2015,
+  title: '',
+  text: 'Our first 2015 event hosted by Hogan Lovells in January.'
+}, {
+  id: 2,
+  icon: 'event',
+  year: 2015,
+  title: '',
+  text: 'July 2015 - Private audience with the Right Honourable Nicky Morgan'
+}, {
+  id: 3,
+  icon: 'cake',
+  year: 2015,
+  title: '',
+  text: 'The 100% Club celebrated its fourth anniversary with a social gathering in November 2015.'
+}, {
+  id: 4,
+  icon: 'event',
+  year: 2016,
+  title: '',
+  text: 'January - Event with guest speaker Ann Francke, CEO of the Chartered Management Institute'
+}, {
+  id: 5,
+  icon: 'event',
+  year: 2016,
+  title: '',
+  text: 'May - Event hosted by Capital Group with Dame Fiona Woolf, Lord Mayor of the City of London 2013-2014'
+}, {
+  id: 6,
+  icon: 'control_point',
+  year: 2016,
+  title: '',
+  text: 'October - 5th anniversary, evening kindly hosted by Standard Life Investments with over 100 members'
+}, {
+  id: 7,
+  icon: 'event',
+  year: 2017,
+  title: '',
+  text: 'September - Discussion with Helen Dean, CEO of NEST, hosted by Vanguard Asset Management'
+}, {
+  id: 8,
+  icon: 'event',
+  year: 2018,
+  title: '',
+  text: 'April - Discussion with Philippa Foster Back, CBE, Director of the Institute of Business Ethics'
+}, {
+  id: 9,
+  icon: 'cake',
+  year: 2018,
+  title: '',
+  text: 'Celebrating 7 years at the iconic Guild Hall, hosted by the City of London Corporation.'
+}]);
+
+/***/ }),
+
 /***/ "./pages/about.js":
 /*!************************!*\
   !*** ./pages/about.js ***!
@@ -772,12 +1156,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/Layout */ "./components/Layout.js");
 /* harmony import */ var components_Author__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/Author */ "./components/Author.js");
 /* harmony import */ var components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/Footer */ "./components/Footer.js");
-/* harmony import */ var _home_Intro__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/Intro */ "./pages/home/Intro.js");
-/* harmony import */ var _home_Speakers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/Speakers */ "./pages/home/Speakers.js");
-/* harmony import */ var _home_Parallax__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/Parallax */ "./pages/home/Parallax.js");
-/* harmony import */ var _home_Experiment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/Experiment */ "./pages/home/Experiment.js");
-/* harmony import */ var _home_Keygoals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/Keygoals */ "./pages/home/Keygoals.js");
-/* harmony import */ var _about_Timeline__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./about/Timeline */ "./pages/about/Timeline.js");
+/* harmony import */ var components_Timeline_Timeline__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/Timeline/Timeline */ "./components/Timeline/Timeline.js");
+/* harmony import */ var _home_Intro__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/Intro */ "./pages/home/Intro.js");
+/* harmony import */ var _home_Speakers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/Speakers */ "./pages/home/Speakers.js");
+/* harmony import */ var _home_Parallax__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/Parallax */ "./pages/home/Parallax.js");
+/* harmony import */ var _home_Experiment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/Experiment */ "./pages/home/Experiment.js");
+/* harmony import */ var _home_Keygoals__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/Keygoals */ "./pages/home/Keygoals.js");
 /* harmony import */ var _home_Quote__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/Quote */ "./pages/home/Quote.js");
 /* harmony import */ var components_Divider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! components/Divider */ "./components/Divider.js");
 var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/about.js";
@@ -811,237 +1195,113 @@ function About() {
   var ContainerTimeline = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "about__ContainerTimeline",
     componentId: "wlrdrz-3"
-  })(["background-color:#f6f6f6;"]);
+  })(["max-width:100%;background-color:#f6f6f6;"]);
+  var TitleMilestones = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
+    displayName: "about__TitleMilestones",
+    componentId: "wlrdrz-4"
+  })(["font-weight:bold;font-size:16px!important;text-transform:uppercase;margin:30px 0;text-decoration:underline;"]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 48
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_Experiment__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_Experiment__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 49
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContainerTimeline, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 50
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_about_Timeline__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
+    className: "center-align",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 51
+    },
+    __self: this
+  }, " What do we do "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Paragraph, {
+    className: "center-align",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut felis vel arcu iaculis laoreet. Quisque molestie suscipit lacinia. Pellentesque venenatis efficitur fringilla. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at. Nam luctus leo felis, non lacinia augue suscipit non. Fusce lectus risus, laoreet non posuere at, ullamcorper ut purus. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
+    className: "center-align",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, " Why do we do it "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Paragraph, {
+    className: "last center-align",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, " Vestibulum ut felis vel arcu iaculis laoreet. Quisque molestie suscipit lacinia. Pellentesque venenatis efficitur fringilla. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at. Nam luctus leo felis, non lacinia augue suscipit non. Fusce lectus risus, laoreet non posuere at, ullamcorper ut purus. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Divider__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 60
     },
     __self: this
-  }));
-}
-
-/***/ }),
-
-/***/ "./pages/about/Timeline.js":
-/*!*********************************!*\
-  !*** ./pages/about/Timeline.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Timeline; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./pages/about/data.js");
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/about/Timeline.js";
-
-
-
-function Timeline() {
-  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Timeline__Container",
-    componentId: "sc-1s2wrk4-0"
-  })(["display:flex;flex-wrap:wrap;width:94%;position:relative;margin:0 3%;border-left:1px dashed rgba(0,0,0,.1);"]);
-  var Column = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Timeline__Column",
-    componentId: "sc-1s2wrk4-1"
-  })(["width:100%;"]);
-  var LineMiddle = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Timeline__LineMiddle",
-    componentId: "sc-1s2wrk4-2"
-  })(["width:100%;top:50%;display:none;position:absolute;border-bottom:1px solid black;"]);
-  var Year = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
-    displayName: "Timeline__Year",
-    componentId: "sc-1s2wrk4-3"
-  })(["font-size:24px;color:rgb(223,229,231);font-weight:bold;display:block;margin:20px 0 0 10px;"]);
-  var Card = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Timeline__Card",
-    componentId: "sc-1s2wrk4-4"
-  })(["pointer-events:none;background-color:white;z-index:2;padding:10px;margin-bottom:10px;h5{margin:0 0 10px 0;}p{margin:0;}"]);
-  var VerticalLine = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Timeline__VerticalLine",
-    componentId: "sc-1s2wrk4-5"
-  })(["display:none;margin:0;position:relative;top:50%;left:-1px;width:1px;background-image:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.0));height:", "%;", ":hover &{background-image:linear-gradient(to bottom,rgb(1,58,81),26%,rgb(251,140,0));}", ""], function (propsS) {
-    return propsS.height || 0;
-  }, Column, function (propsS) {
-    return propsS.translateY ? "\n        background-image: linear-gradient(to top, rgba(0,0,0,.4), rgba(0, 0,0, .0));\n            transform: translateY(-100%);\n\n            ".concat(Column, ":hover & {\n                background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(251, 140, 0));\n            }\n        ") : '';
-  }); // background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(0, 229, 158));
-
-  function getColumn() {
-    var positions = [{
-      bottom: 75
-    }, {
-      bottom: 55
-    }, {
-      top: 75
-    }, {
-      top: 55
-    }];
-    var years = {};
-    return _data__WEBPACK_IMPORTED_MODULE_2__["default"].map(function (d, index) {
-      var pos = positions[index % 4];
-      var year = years[d.year] ? '' : d.year;
-      years[d.year] = true;
-      var height = (pos.bottom || pos.top) - 50;
-      var translateY = pos.bottom ? true : false;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Column, {
-        key: d.id,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        },
-        __self: this
-      }, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
-        top: pos.top,
-        bottom: pos.bottom,
-        className: "z-depth-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        },
-        __self: this
-      }, d.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
-        height: height,
-        translateY: translateY,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }));
-    });
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleMilestones, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 61
     },
     __self: this
-  }, getColumn(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LineMiddle, {
+  }, " Milestones ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContainerTimeline, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 63
     },
     __self: this
-  }));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Timeline_Timeline__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AuthorContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Author__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    image: "/static/img/deborah.png",
+    title: "Founder: Deborah Gilshan",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut felis vel arcu iaculis laoreet. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }))));
 }
-
-/***/ }),
-
-/***/ "./pages/about/data.js":
-/*!*****************************!*\
-  !*** ./pages/about/data.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  id: 0,
-  year: 2010,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 1,
-  year: 2010,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 2,
-  year: 2011,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 3,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 4,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 5,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 6,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 7,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 8,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 9,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}, {
-  id: 10,
-  year: 2012,
-  title: 'title 1',
-  text: 'This is a text here blablablabla flou flou flou riri ri ri ri'
-}]);
 
 /***/ }),
 
@@ -1085,7 +1345,7 @@ function Experiment() {
       lineNumber: 20
     },
     __self: this
-  }, "TOP"));
+  }, "IMAGE"));
 }
 
 /***/ }),
@@ -1653,7 +1913,39 @@ function Speakers() {
 
 /***/ }),
 
-/***/ 6:
+/***/ "./utils/styles/media.js":
+/*!*******************************!*\
+  !*** ./utils/styles/media.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+var sizes = {
+  desktopExtraLarge: 1000000,
+  desktopLarge: 1440,
+  desktop: 1196,
+  responsive850: 850,
+  tablet: 768,
+  mobileLarge: 480,
+  mobile: 375
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object.keys(sizes).reduce(function (acc, label) {
+  acc[label] = function () {
+    return Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["@media (min-width:", "em){", "}"], sizes[label] / 16, styled_components__WEBPACK_IMPORTED_MODULE_0__["css"].apply(void 0, arguments));
+  };
+
+  return acc || {};
+}, {}));
+;
+
+/***/ }),
+
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/

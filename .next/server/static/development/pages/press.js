@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -776,7 +776,7 @@ function Events() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/press.js ***!
   \******************************/
