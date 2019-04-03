@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const ListStyled = styled.div`
+    display: flex;
+
+    a {
+        margin: 0 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+`;
+
 export default function List (props) {
 
-    const ListStyled = styled.div`
-        display: flex;
-
-        a {
-            margin: 0 20px;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-
-    `;
 
     function getList(){
         let list = props.options || [];

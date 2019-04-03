@@ -2,42 +2,43 @@ import React from 'react';
 import styled from 'styled-components';
 import List from 'components/List';
 
+const Container = styled.div`
+    max-width: 800px;
+    margin: auto;
+    border-left: 6px solid #ffca28;
+    padding-left: 28px;
+    padding-bottom: 20px;
+    margin-top: 20px
+`;
+
+const ContainerTop = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const Title = styled.h4`
+    font-weight: bold;
+`;
+
+const Date = styled.p`
+`;
+
+const Text = styled.p`
+    width: 90%;
+    text-align: justify;
+    padding-left: 10px;
+`;
+
+const ContainerList = styled.div`
+    padding-left: 10px;
+    margin: 40px 0;
+`;
+
+const ContainerButton = styled.div`
+    text-align:right
+`;
+
 export default function EventMain (props) {
-    const Container = styled.div`
-        max-width: 800px;
-        margin: auto;
-        border-left: 6px solid #ffca28;
-        padding-left: 28px;
-        padding-bottom: 20px;
-        margin-top: 20px
-    `;
-
-    const ContainerTop = styled.div`
-        display: flex;
-        justify-content: space-between;
-    `;
-
-    const Title = styled.h4`
-        font-weight: bold;
-    `;
-
-    const Date = styled.p`
-    `;
-
-    const Text = styled.p`
-        width: 90%;
-        text-align: justify;
-        padding-left: 10px;
-    `;
-
-    const ContainerList = styled.div`
-        padding-left: 10px;
-        margin: 40px 0;
-    `;
-
-    const ContainerButton = styled.div`
-        text-align:right
-    `;
 
     return (
         <React.Fragment>

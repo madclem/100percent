@@ -1,7 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import gql from "graphql-tag";
+import { graphql } from "react-apollo";
 
-export default function Quote () {
+
+const query = gql`
+{
+    quotes {
+        name
+        quote
+    }
+}
+`;
+
+export default graphql(query, {
+    props: ({ data }) => ({
+        data
+    })
+})(function Quote (props) {
 
     const Container = styled.div`
         display: flex;
@@ -28,15 +44,26 @@ export default function Quote () {
         font-style: italic;
     `;
 
+    let quote
+    if (!props.data || !props.data.quotes || props.data.quotes.length === 0) {
+        quote = <div>No quotes found</div>
+    }
+    else {
+        let q = props.data.quotes[Math.floor(Math.random() * props.data.quotes.length)]
+        quote = (
+            <React.Fragment>
+                <QuotationMark className='grey-text'>"</QuotationMark>
+                <Quote className='grey-text text-darken-2'>
+                    {q.quote}
+                    <Author>{q.name}</Author>
+                </Quote>
+                <QuotationMark className='grey-text'>"</QuotationMark>
+            </React.Fragment>
+        )
+    }
     return (
         <Container className='container'>
-            <QuotationMark className='grey-text'>"</QuotationMark>
-            <Quote className='grey-text text-darken-2'>
-                Morbi mattis nec magna at mollis. Nullam pellentesque odio metus, nec vestibulum sem vulputate in. Praesent interdum, mauris a convallis vestibulum, arcu urna placerat nulla, in viverra dui quam sed elit.
-                <Author>Michelle</Author>
-            </Quote>
-            <QuotationMark className='grey-text'>"</QuotationMark>
-            
+            {quote}
         </Container>
     );
-}
+})

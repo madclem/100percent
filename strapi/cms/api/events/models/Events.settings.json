@@ -1,0 +1,36 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "events",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "default": "",
+      "type": "date"
+    },
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "speakers": {
+      "collection": "speakers",
+      "via": "events",
+      "dominant": true
+    }
+  }
+}

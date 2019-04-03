@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "quotes",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "quote": {
+      "default": "",
+      "type": "text"
+    },
+    "name": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

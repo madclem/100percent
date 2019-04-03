@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/milestoneicons",
+      "handler": "Milestoneicons.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/milestoneicons/count",
+      "handler": "Milestoneicons.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/milestoneicons/:_id",
+      "handler": "Milestoneicons.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/milestoneicons",
+      "handler": "Milestoneicons.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/milestoneicons/:_id",
+      "handler": "Milestoneicons.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/milestoneicons/:_id",
+      "handler": "Milestoneicons.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

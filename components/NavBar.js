@@ -4,26 +4,27 @@ import Link from 'next/link';
 import {withRouter} from 'next/router';
 
 
+const LinkStyled = styled.a`
+color: ${ propsStyle => propsStyle.active ? '#ffc107':'black'};
+:hover {
+    background-color: transparent;
+}
+`;
+const LinkStyledLast = styled(LinkStyled)`
+    display: flex;
+    align-items: center;    
+`;
+
+const Badge = styled.span`
+    margin-left: 8px!important;
+`;
+
+const ContainerNavBar = styled.nav`
+    position: absolute;
+`;
+
 export default withRouter(function NavBar(props) {
     
-    const LinkStyled = styled.a`
-    color: ${ propsStyle => propsStyle.active ? '#ffc107':'black'};
-    :hover {
-        background-color: transparent;
-    }
-    `;
-    const LinkStyledLast = styled(LinkStyled)`
-        display: flex;
-        align-items: center;    
-    `;
-
-    const Badge = styled.span`
-        margin-left: 8px!important;
-    `;
-
-    const ContainerNavBar = styled.nav`
-        position: absolute;
-    `;
     
     const navBar = React.createRef();
 

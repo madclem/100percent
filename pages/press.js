@@ -1,57 +1,64 @@
 import React from 'react'
 import styled from 'styled-components';
 import Layout from 'components/Layout';
+import gql from "graphql-tag";
+import { graphql } from "react-apollo";
 
-export default function Events () {
-    const Container = styled.div`
-        margin-bottom: 80px;
-    `;
+const Container = styled.div`
+    margin-bottom: 80px;
+`;
 
-    const ContainerArticles = styled.div`
-        margin-top: 40px;
-    `;
+const ContainerArticles = styled.div`
+    margin-top: 40px;
+`;
 
-    const Separator = styled.div`
-        padding-top: 80px;
-    `;
+const Separator = styled.div`
+    padding-top: 80px;
+`;
 
-    const articles = [
-        {
-            id: 0,
-            title: 'Marie Claire',
-            text: 'We appeared on Marie Claire\'s article',
-            link: '#'
-        },
-        {
-            id: 1,
-            title: 'Telegraph',
-            text: 'We appeared on Telegraph\'s article',
-            link: '#'
-        },
-        {
-            id: 2,
-            title: 'Other',
-            text: 'We appeared on Other\'s article',
-            link: '#'
-        },
-    ]
 
-    function getArticles(){
-        return  articles.map((article)=>{
+
+const query = gql`
+{
+    presses {
+        _id
+        title
+        description
+        link
+        is_club_related
+    }
+}
+`;
+
+export default graphql(query, {
+    props: ({ data }) => ({
+        data
+    })
+})(function Events (props) {
+
+    function getArticles(pressArticles){
+        return  pressArticles.map((a)=>{
             return (
-                <div className="col s12 m6" key={article.id}>
+                <div className="col s12 m6" key={a.id}>
                     <div className="card">
                         <div className="card-content">
-                            <span className="card-title">{article.title}</span>
-                            <p>{article.text}</p>
+                            <span className="card-title">{a.title}</span>
+                            <p>{a.text}</p>
                         </div>
                         <div className="card-action">
-                            <a href={article.link}>Link</a>
+                            <a href={a.link}>Link</a>
                         </div>
                     </div>
                 </div>
             )
         });
+    }
+
+    let articles
+    if (!props.data || !props.data.presses || (props.data.presses && props.data.presses.lenght < 1)) {
+        articles = (<div>No articles found</div>)
+    } else {
+        articles = getArticles(props.data.presses)
     }
 
     return (
@@ -60,9 +67,9 @@ export default function Events () {
             <Container className='container'>
                 <h2>Press</h2>
                 <ContainerArticles className="row">
-                    {getArticles()}
+                    {articles}
                 </ContainerArticles>
             </Container>
         </Layout>
     );
-}
+})

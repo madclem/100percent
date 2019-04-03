@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
+const Container = styled.div`
+    max-width: 800px;
+    margin: auto;
+`;
+
+const LinkStyled = styled.a`
+`;
+
 export default function  (props) {
 
-    const Container = styled.div`
-        max-width: 800px;
-        margin: auto;
-    `;
-
-    const LinkStyled = styled.a`
-    `;
 
     return (
         <Container className="card horizontal">
