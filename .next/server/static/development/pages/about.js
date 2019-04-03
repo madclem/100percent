@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -226,8 +226,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/components/Footer.js";
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -281,87 +279,23 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
         className: "grey lighten-4",
-        id: "contact",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
+        id: "contact"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
+        className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }, "Deborah Gilshan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Intro, {
-        className: "grey-text text-darken-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, "Founder, the 100% club"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "Email:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "deborah.gilshan@the100percentclub.co.uk")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Socials, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, "Deborah Gilshan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Intro, {
+        className: "grey-text text-darken-2"
+      }, "Founder, the 100% club"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Email:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "deborah.gilshan@the100percentclub.co.uk")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Socials, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "material-icons text-black",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
+        className: "material-icons text-black"
       }, "email")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
+        href: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "linkedin",
         src: "/static/img/linkedin-icon.svg",
-        alt: "linkedin",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
+        alt: "linkedin"
       })))));
     }
   }]);
@@ -386,31 +320,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var components_NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/NavBar */ "./components/NavBar.js");
 /* harmony import */ var components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/Footer */ "./components/Footer.js");
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/components/Layout.js";
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }), children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"], null), children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 });
 
 /***/ }),
@@ -863,7 +778,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./pages/about/data.js");
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/about/Timeline.js";
 
 
 
@@ -915,64 +829,19 @@ function Timeline() {
       var height = (pos.bottom || pos.top) - 50;
       var translateY = pos.bottom ? true : false;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Column, {
-        key: d.id,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        },
-        __self: this
-      }, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
+        key: d.id
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Year, null, " ", year, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
         top: pos.top,
         bottom: pos.bottom,
-        className: "z-depth-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        },
-        __self: this
-      }, d.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
+        className: "z-depth-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, d.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, d.text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VerticalLine, {
         height: height,
-        translateY: translateY,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
+        translateY: translateY
       }));
     });
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 119
-    },
-    __self: this
-  }, getColumn(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LineMiddle, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: this
-  }));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, getColumn(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LineMiddle, null));
 }
 
 /***/ }),
@@ -1144,7 +1013,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/home/Keygoal.js";
 
 
 function Keyword(props) {
@@ -1165,33 +1033,12 @@ function Keyword(props) {
     componentId: "sc-13hdpni-3"
   })(["width:80%;margin:auto;"]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContainerKeyword, {
-    className: props.className,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
+    className: props.className
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
-    className: "material-icons large grey lighten-2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
+    className: "material-icons large grey lighten-2"
   }, "desktop_mac"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(H2, {
-    className: "",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Paragraph, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, props.description));
+    className: ""
+  }, props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Paragraph, null, props.description));
 }
 
 /***/ }),
@@ -1211,7 +1058,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Keygoal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Keygoal */ "./pages/home/Keygoal.js");
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/home/Keygoals.js";
 
 
 
@@ -1221,46 +1067,21 @@ function Keywords() {
     componentId: "xl127j-0"
   })(["margin:50px auto;"]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
+    className: "container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
+    className: "row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Keygoal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "col s8 offset-s2 m4",
     title: "GOAL 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Keygoal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "col s8 offset-s2 m4",
     title: "GOAL 2",
-    description: "Donec interdum, massa ac mattis ultrices.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
+    description: "Donec interdum, massa ac mattis ultrices."
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Keygoal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "col s8 offset-s2 m4",
     title: "GOAL 3",
-    description: "ipsum lectus vestibulum metus, et varius tortor ligula vel felis.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
+    description: "ipsum lectus vestibulum metus, et varius tortor ligula vel felis."
   })));
 }
 
@@ -1280,8 +1101,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/clementchenebault/Documents/dev/100percentclub/pages/home/Parallax.js";
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1345,53 +1164,15 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "parallax-container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
+        className: "parallax-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "parallax",
-        ref: this.parallax,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
+        ref: this.parallax
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://lorempixel.com/g/1200/800/people/4",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
+        src: "https://lorempixel.com/g/1200/800/people/4"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
-        className: "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 53
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord1, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        },
-        __self: this
-      }, " GATHER "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord2, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        },
-        __self: this
-      }, " EMPOWER "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord3, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56
-        },
-        __self: this
-      }, " COLLABORATE ")));
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord1, null, " GATHER "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord2, null, " EMPOWER "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PowerWord3, null, " COLLABORATE ")));
     }
   }]);
 
@@ -1653,7 +1434,7 @@ function Speakers() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/
