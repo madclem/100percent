@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "events",
   "info": {
     "name": "events",
     "description": ""
@@ -31,6 +31,24 @@
       "collection": "speakers",
       "via": "events",
       "dominant": true
+    },
+    "is_next": {
+      "default": false,
+      "type": "boolean"
+    },
+    "address": {
+      "default": "",
+      "type": "text"
+    },
+    "full_description": {
+      "default": "",
+      "type": "text"
+    },
+    "main_photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }

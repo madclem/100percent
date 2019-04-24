@@ -72,8 +72,6 @@ export default function About () {
     return (
         <Layout>
             <Experiment />
-            <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
             <div className='container'>
                 <Title className='center-align'> What do we do </Title>
                 <Paragraph className='center-align'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut felis vel arcu iaculis laoreet. Quisque molestie suscipit lacinia. Pellentesque venenatis efficitur fringilla. Aliquam erat volutpat. Nunc posuere nunc erat, ac varius purus consequat at. Nam luctus leo felis, non lacinia augue suscipit non. Fusce lectus risus, laoreet non posuere at, ullamcorper ut purus. </Paragraph>
@@ -98,7 +96,6 @@ export default function About () {
 
             <div id="modal1" className="modal">
                 <div className="modal-content">
-                    <h4>title</h4>
                     <p id='textToReplace'></p>
                 </div>
                 <div className="modal-footer">

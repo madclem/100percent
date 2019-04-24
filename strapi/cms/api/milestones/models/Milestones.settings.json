@@ -19,6 +19,10 @@
     },
     "milestoneicons": {
       "model": "milestoneicons"
+    },
+    "short_description": {
+      "default": "",
+      "type": "text"
     }
   }
 }

@@ -4,79 +4,117 @@ import Layout from 'components/Layout';
 import Divider from 'components/Divider';
 import EventMain from 'components/EventMain';
 import HorizontalCard from 'components/HorizontalCard';
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+import { graphql } from "react-apollo";
 
-export default function Events () {
-    const Container = styled.div`
-        margin-bottom: 80px
-    `;
-
-    const Separator = styled.div`
-        padding-top: 80px;
-    `;
-
-    const ContainerCard = styled.div`
-        margin: 20px 0;
-    `;
-
-    const eventsData = [
-        {
-            id: 0,
-            title: 'Event November',
-            image: 'https://lorempixel.com/190/190/business/1',
-            link: '/event',
-            description: 'This was the great gathering of November',
-            fullDescription: 'This was the great gathering of November, and this is its complete description (more space to write what you want!)',
-        },
-        {
-            id: 1,
-            title: 'Event December',
-            image: 'https://lorempixel.com/190/190/business/2',
-            link: '/event',
-            description: 'This was the great gathering of December',
-            fullDescription: 'This was the great gathering of December, and this is its complete description (more space to write what you want!)',
-        },
-        {
-            id: 2,
-            title: 'Event January',
-            image: 'https://lorempixel.com/190/190/business/3',
-            link: '/event',
-            description: 'This was the great gathering of January',
-            fullDescription: 'This was the great gathering of January, and this is its complete description (more space to write what you want!)',
+const mainEventQuery = gql`
+    query events($is_next: Boolean!) {
+        events(where:{is_next: $is_next}) {
+            title
+            date
+            full_description
+            description
+            address
+            speakers {
+                _id
+                name
+            }
         }
-    ];
+    }
+`;
+
+const queryEvents = gql`
+{
+    events {
+        _id
+        is_next
+        title
+        full_description
+        description
+        main_photo {
+            url
+        }
+    }
+}
+`;
+
+const Container = styled.div`
+    margin-bottom: 80px
+`;
+
+const Separator = styled.div`
+    padding-top: 80px;
+`;
+
+const ContainerCard = styled.div`
+    margin: 20px 0;
+`;
+
+export default graphql(queryEvents, {
+    props: ({ data }) => ({
+        data
+    })
+})(function Events (props) {
+
+
+    let eventsData = []
+    
+    if (props.data && props.data.events) {
+        eventsData = props.data.events
+    }
 
     function getEvents(){
         return eventsData.map((event)=>{
-            return (
-                <ContainerCard key={event.id}>
-                    <HorizontalCard {...event} />
-                </ContainerCard>
-            )
+            if(!event.is_next) {
+                event.link = '/event/' + event._id
+                return (
+                    <ContainerCard key={event.id}>
+                        <HorizontalCard {...event} />
+                    </ContainerCard>
+                )
+            }
         })
     }
 
-    const speakersNextEvent = [
-        { id: 0, name: 'Speaker 1', link: '#' },
-        { id: 1, name: 'Speaker 2', link: '#' },
-        { id: 2, name: 'Speaker 3', link: '#' },
-    ]
 
-    const nextEventData = {
-        title: 'Next Event: February Gathering',
-        description: 'Next Event: February Gathering',
-        date: '22.02.2019',
-        speakers: speakersNextEvent,
-        cta: true
-    }
+    // const nextEventData = {
+    //     title: 'Next Event: February Gathering',
+    //     description: 'Next Event: February Gathering',
+    //     date: '22.02.2019',
+    //     speakers: speakersNextEvent,
+    //     cta: true
+    // }
 
+    let nextEventData
     return (
         <Layout>
-            <Separator />
+            <Separator />            
             <Container className='container'>
-                <EventMain {...nextEventData} />
+                <Query query={mainEventQuery} variables={{is_next: true}}>
+                    {({ loading, error, data }) => {
+                        if (loading) {
+                            return null;
+                        }
+                        if (error) {
+                            return `Error: ${error}`;
+                        }
+                        
+                        if (data && data['events'] && data['events'].length > 0) {
+
+                            return (
+                                <EventMain data={data['events'][0]} />
+                            )
+                        }
+                        else {
+                            return null
+                        }
+                    }}
+                </Query>
+                
                 <Divider top={60} bottom={60} />
                 {getEvents()}
             </Container>
         </Layout>
     );
-}
+})

@@ -4,6 +4,8 @@ import media from 'utils/styles/media';
 import data from './data';
 import Card from './Card';
 import Column from './Column';
+import gql from "graphql-tag";
+import { graphql } from "react-apollo";
 
 const Container = styled.div`
     display: flex;
@@ -83,7 +85,6 @@ const VerticalLine = styled.div`
             }
         ` : ''}
     `}
-
 `;
 
 const Point = styled.div`
@@ -101,12 +102,35 @@ const Point = styled.div`
     `}
 `;
 
-export default function Timeline (props) {        
+const query = gql`
+{
+    milestones {
+      _id
+      year
+      short_description
+      description
+      milestoneicons {
+        _id
+        icon {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export default graphql(query, {
+    props: ({ data }) => ({
+        data
+    })
+})(function Timeline (props) {        
     // background-image: linear-gradient(to top, rgb(1, 58, 81), 26%, rgb(0, 229, 158));
 
-    function clickColumn() {
-        props.onClick('this is a lot bundjwokdw okdwo kdowk dowk dowk dowkd owk dowkd owkdowk odkw odkwp kdpwo kdpowkd poqwkdopqwkdop wqkdopwq kdopqwk dpowkq opdkwqop kdopwqk dpowkqpo dkwqpodk ewfler[glregpkrtoih gjnodkwq[pkdfpoerwjgfopqldwq[pkferjgopqpw d d wqd lp[qwld p[qwld [pwqdw  qwpldwqpdlqw[pd')
+    function clickColumn(e) {
+        let description = e.target.getAttribute('data-description');
+        props.onClick(description)
     }
+    
 
     function getColumn() {
 
@@ -117,7 +141,7 @@ export default function Timeline (props) {
             { top: 60},
         ]
         const years = {};
-        return data.map((d, index)=>{
+        return props.data.milestones.map((d, index)=>{
             const pos = positions[index % 4];
             const year = years[d.year] ? '' : d.year;
             years[d.year] = true;
@@ -125,13 +149,12 @@ export default function Timeline (props) {
             let height = (pos.bottom || pos.top) - 50;
             let translateY = pos.bottom ? true: false;
             return (
-            <Column key={d.id} onClick={clickColumn}>
+            <Column key={d._id} onClick={clickColumn} data-description={d.description}>
                 <Year> {year} </Year>
                 <Card top={pos.top} bottom={pos.bottom} className='z-depth-1'>
-                    <h5><i className='material-icons'>{d.icon}</i>{d.title}</h5>
-                    <p>{d.text}</p>
+                    <h5><img src={`http://localhost:1337${d.milestoneicons.icon.url}`} /></h5>
+                    <p>{d.short_description}</p>
                 </Card>
-
                 <VerticalLine height={height} translateY={translateY} />
                 <Point widthPoint={6} />
             </Column>
@@ -139,10 +162,12 @@ export default function Timeline (props) {
         });
     }
 
+    if (!props.data || !props.data.milestones) return (<div />)
+
     return (
         <Container>
             {getColumn()}
             <LineMiddle />
         </Container>
     );
-}
+})

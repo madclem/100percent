@@ -21,7 +21,7 @@ export default function List (props) {
         let list = props.options || [];
         return list.map((l)=>{
             return (
-                <a href='#' key={l.id}>{l.name}</a>
+                <a href={`/speakers/${l._id}`} key={l._id}>{l.name}</a>
             );
         });
     }

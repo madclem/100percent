@@ -153,6 +153,10 @@ input editEventsInput {
   description: String
   photos: [ID]
   speakers: [ID]
+  is_next: Boolean
+  address: String
+  full_description: String
+  main_photo: ID
 }
 
 input editFileInput {
@@ -177,6 +181,7 @@ input editMilestonesInput {
   year: Int
   description: String
   milestoneicons: ID
+  short_description: String
 }
 
 input editPostInput {
@@ -231,6 +236,10 @@ type Events {
   date: DateTime
   title: String
   description: String
+  is_next: Boolean
+  address: String
+  full_description: String
+  main_photo: UploadFile
   photos(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   speakers(sort: String, limit: Int, start: Int, where: JSON): [Speakers]
 }
@@ -250,6 +259,11 @@ type EventsConnection_id {
   connection: EventsConnection
 }
 
+type EventsConnectionAddress {
+  key: String
+  connection: EventsConnection
+}
+
 type EventsConnectionCreatedAt {
   key: DateTime
   connection: EventsConnection
@@ -262,6 +276,21 @@ type EventsConnectionDate {
 
 type EventsConnectionDescription {
   key: String
+  connection: EventsConnection
+}
+
+type EventsConnectionFull_description {
+  key: String
+  connection: EventsConnection
+}
+
+type EventsConnectionIs_next {
+  key: Boolean
+  connection: EventsConnection
+}
+
+type EventsConnectionMain_photo {
+  key: ID
   connection: EventsConnection
 }
 
@@ -282,6 +311,10 @@ type EventsGroupBy {
   date: [EventsConnectionDate]
   title: [EventsConnectionTitle]
   description: [EventsConnectionDescription]
+  is_next: [EventsConnectionIs_next]
+  address: [EventsConnectionAddress]
+  full_description: [EventsConnectionFull_description]
+  main_photo: [EventsConnectionMain_photo]
 }
 
 input EventsInput {
@@ -290,6 +323,10 @@ input EventsInput {
   description: String
   photos: [ID]
   speakers: [ID]
+  is_next: Boolean
+  address: String
+  full_description: String
+  main_photo: ID
 }
 
 input FileInput {
@@ -377,6 +414,7 @@ type Milestones {
   year: Int
   description: String
   milestoneicons: Milestoneicons
+  short_description: String
 }
 
 type MilestonesAggregator {
@@ -429,6 +467,11 @@ type MilestonesConnectionMilestoneicons {
   connection: MilestonesConnection
 }
 
+type MilestonesConnectionShort_description {
+  key: String
+  connection: MilestonesConnection
+}
+
 type MilestonesConnectionUpdatedAt {
   key: DateTime
   connection: MilestonesConnection
@@ -446,15 +489,17 @@ type MilestonesGroupBy {
   year: [MilestonesConnectionYear]
   description: [MilestonesConnectionDescription]
   milestoneicons: [MilestonesConnectionMilestoneicons]
+  short_description: [MilestonesConnectionShort_description]
 }
 
 input MilestonesInput {
   year: Int
   description: String
   milestoneicons: ID
+  short_description: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Events | createEventsPayload | updateEventsPayload | deleteEventsPayload | EventsConnection | EventsAggregator | EventsGroupBy | EventsConnection_id | EventsConnectionCreatedAt | EventsConnectionUpdatedAt | EventsConnectionDate | EventsConnectionTitle | EventsConnectionDescription | Milestoneicons | createMilestoneiconsPayload | updateMilestoneiconsPayload | deleteMilestoneiconsPayload | MilestoneiconsConnection | MilestoneiconsAggregator | MilestoneiconsGroupBy | MilestoneiconsConnection_id | MilestoneiconsConnectionCreatedAt | MilestoneiconsConnectionUpdatedAt | MilestoneiconsConnectionName | MilestoneiconsConnectionIcon | Milestones | createMilestonesPayload | updateMilestonesPayload | deleteMilestonesPayload | MilestonesConnection | MilestonesAggregator | MilestonesAggregatorSum | MilestonesAggregatorAvg | MilestonesAggregatorMin | MilestonesAggregatorMax | MilestonesGroupBy | MilestonesConnection_id | MilestonesConnectionCreatedAt | MilestonesConnectionUpdatedAt | MilestonesConnectionYear | MilestonesConnectionDescription | MilestonesConnectionMilestoneicons | Post | createPostPayload | updatePostPayload | deletePostPayload | PostConnection | PostAggregator | PostGroupBy | PostConnection_id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionName | PostConnectionContent | PostConnectionCover | Press | createPressPayload | updatePressPayload | deletePressPayload | PressConnection | PressAggregator | PressGroupBy | PressConnection_id | PressConnectionCreatedAt | PressConnectionUpdatedAt | PressConnectionTitle | PressConnectionDescription | PressConnectionLink | PressConnectionIs_club_related | Quotes | createQuotesPayload | updateQuotesPayload | deleteQuotesPayload | QuotesConnection | QuotesAggregator | QuotesGroupBy | QuotesConnection_id | QuotesConnectionCreatedAt | QuotesConnectionUpdatedAt | QuotesConnectionQuote | QuotesConnectionName | Speakers | createSpeakersPayload | updateSpeakersPayload | deleteSpeakersPayload | SpeakersConnection | SpeakersAggregator | SpeakersGroupBy | SpeakersConnection_id | SpeakersConnectionCreatedAt | SpeakersConnectionUpdatedAt | SpeakersConnectionPhoto | SpeakersConnectionName | SpeakersConnectionDescription | SpeakersConnectionLink | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Events | createEventsPayload | updateEventsPayload | deleteEventsPayload | EventsConnection | EventsAggregator | EventsGroupBy | EventsConnection_id | EventsConnectionCreatedAt | EventsConnectionUpdatedAt | EventsConnectionDate | EventsConnectionTitle | EventsConnectionDescription | EventsConnectionIs_next | EventsConnectionAddress | EventsConnectionFull_description | EventsConnectionMain_photo | Milestoneicons | createMilestoneiconsPayload | updateMilestoneiconsPayload | deleteMilestoneiconsPayload | MilestoneiconsConnection | MilestoneiconsAggregator | MilestoneiconsGroupBy | MilestoneiconsConnection_id | MilestoneiconsConnectionCreatedAt | MilestoneiconsConnectionUpdatedAt | MilestoneiconsConnectionName | MilestoneiconsConnectionIcon | Milestones | createMilestonesPayload | updateMilestonesPayload | deleteMilestonesPayload | MilestonesConnection | MilestonesAggregator | MilestonesAggregatorSum | MilestonesAggregatorAvg | MilestonesAggregatorMin | MilestonesAggregatorMax | MilestonesGroupBy | MilestonesConnection_id | MilestonesConnectionCreatedAt | MilestonesConnectionUpdatedAt | MilestonesConnectionYear | MilestonesConnectionDescription | MilestonesConnectionMilestoneicons | MilestonesConnectionShort_description | Post | createPostPayload | updatePostPayload | deletePostPayload | PostConnection | PostAggregator | PostGroupBy | PostConnection_id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionName | PostConnectionContent | PostConnectionCover | Press | createPressPayload | updatePressPayload | deletePressPayload | PressConnection | PressAggregator | PressGroupBy | PressConnection_id | PressConnectionCreatedAt | PressConnectionUpdatedAt | PressConnectionTitle | PressConnectionDescription | PressConnectionLink | PressConnectionIs_club_related | Quotes | createQuotesPayload | updateQuotesPayload | deleteQuotesPayload | QuotesConnection | QuotesAggregator | QuotesGroupBy | QuotesConnection_id | QuotesConnectionCreatedAt | QuotesConnectionUpdatedAt | QuotesConnectionQuote | QuotesConnectionName | Speakers | createSpeakersPayload | updateSpeakersPayload | deleteSpeakersPayload | SpeakersConnection | SpeakersAggregator | SpeakersGroupBy | SpeakersConnection_id | SpeakersConnectionCreatedAt | SpeakersConnectionUpdatedAt | SpeakersConnectionPhoto | SpeakersConnectionName | SpeakersConnectionDescription | SpeakersConnectionLink | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createEvents(input: createEventsInput): createEventsPayload

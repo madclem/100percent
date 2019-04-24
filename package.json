@@ -19,6 +19,7 @@
     "next": "^7.0.2",
     "next-apollo": "^2.0.9",
     "react": "^16.8.0",
+    "react-add-to-calendar": "^0.1.5",
     "react-apollo": "^2.5.2",
     "react-dom": "^16.8.0",
     "recompose": "^0.30.0",

@@ -2,7 +2,16 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import {withRouter} from 'next/router';
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
 
+const query = gql`
+    query events($is_next: Boolean!) {
+        events(where:{is_next: $is_next}) {
+            title
+        }
+    }
+`;
 
 const LinkStyled = styled.a`
 color: ${ propsStyle => propsStyle.active ? '#ffc107':'black'};
@@ -42,7 +51,28 @@ export default withRouter(function NavBar(props) {
     });
 
     const {router} = props;
-    
+
+    let badge = (
+        <Query query={query} variables={{is_next: true}}>
+            {({ loading, error, data }) => {
+                if (loading) {
+                    return null;
+                }
+                if (error) {
+                    return `Error: ${error}`;
+                }
+                
+                if (data && data['events'] && data['events'].length > 0) {
+                    return (
+                        <Badge className='new badge white-text orange'>1</Badge>
+                    )
+                }
+                else {
+                    return null
+                }
+            }}
+        </Query>
+    )
     return (
         <React.Fragment>
             <ContainerNavBar className='nav-wrapper transparent z-depth-1'>
@@ -54,7 +84,7 @@ export default withRouter(function NavBar(props) {
                         <li><Link href='/about'><LinkStyled active={ router.pathname === '/about' }>About</LinkStyled></Link></li>
                         <li><Link href='/press'><LinkStyled active={ router.pathname === '/press' }>Press</LinkStyled></Link></li>
                         <li><Link href='#contact'><LinkStyled>Contact</LinkStyled></Link></li>
-                        <li><Link href='/events'><LinkStyledLast active={ router.pathname === '/events' }><span>Events </span><Badge className='new badge white-text orange'>1</Badge></LinkStyledLast></Link></li>
+                        <li><Link href='/events'><LinkStyledLast active={ router.pathname === '/events' }><span>Events </span>{badge}</LinkStyledLast></Link></li>
                     </ul>
                 </div>
             </ContainerNavBar>
