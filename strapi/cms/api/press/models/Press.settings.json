@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "press",
+  "info": {
+    "name": "press",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "link": {
+      "default": "",
+      "type": "text"
+    },
+    "is_club_related": {
+      "default": false,
+      "type": "boolean"
+    }
+  }
+}

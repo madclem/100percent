@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "milestones",
+  "info": {
+    "name": "milestones",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "year": {
+      "default": "",
+      "type": "integer"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "milestoneicons": {
+      "model": "milestoneicons"
+    },
+    "short_description": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

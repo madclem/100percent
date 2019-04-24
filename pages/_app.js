@@ -1,9 +1,10 @@
 // pages/_app.js
+import withData from "../lib/apollo";
 import App, {Container} from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 
-export default class MyApp extends App {
+export default withData(class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
     let pageProps = {}
 
@@ -23,4 +24,4 @@ export default class MyApp extends App {
       <Component {...pageProps} />
     </Container>
   }
-}
+})
